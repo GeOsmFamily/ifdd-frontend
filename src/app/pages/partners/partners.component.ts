@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageService } from 'src/app/core/storage/storage.service';
 
 @Component({
   selector: 'app-partners',
@@ -9,24 +10,112 @@ export class PartnersComponent {
     {
       logo: '/assets/logos/national.png',
       name: 'À propos du Forum Mondial des organes consultatifs nationaux sur les ODD :',
-      about:
-        "Le Forum Mondial est un réseau qui relie les connaissances et l'expérience des commissions consultatives multipartites, des conseils et des organes similaires pour le développement durable. Ces organes contribuent aux architectures institutionnelles nationales pour la mise en œuvre des objectifs de développement durable (ODD). En rapprochant les connaissances et les intérêts des différents groupes de parties prenantes, les organes consultatifs multipartites favorisent l'acceptation sociale et la cohésion de la société en période de transformation. La demande pour leur travail de facilitation des résultats des négociations ne peut être sous-estimée. Ce forum pour et par les organes consultatifs multipartites nationaux est aussi hétérogène que les contextes respectifs de ses membres, qui varient en conséquence dans leur développement institutionnel, leur mise en place, leur mandat et leur rôle. Les échanges constants au sein des groupes de travail et entre eux créent un riche marché d'idées, de mécanismes de négociation et de mesures politiques efficaces qui peuvent facilement être transférés et adaptés aux besoins et aux demandes locales ailleurs. En tant que réseau axé sur la demande, il évolue constamment dans les processus collectifs. Grâce à son riche réservoir de connaissances collectives, le forum invite efficacement les parties prenantes et les gouvernements du monde entier à adapter, mettre en œuvre et accélérer conjointement la réalisation de l'Agenda 2030 et des ODD.",
+      about: "Le Forum Mondial est un réseau qui relie les connaissances et l'expérience des commissions consultatives multipartites, des conseils et des organes similaires pour le développement durable. Ces organes contribuent aux architectures institutionnelles nationales pour la mise en œuvre des objectifs de développement durable (ODD). En rapprochant les connaissances et les intérêts des différents groupes de parties prenantes, ils favorisent l'acceptation sociale et la cohésion de la société en période de transformation.",
       website: 'http://www.sdg-advisorybodies.net/',
     },
     {
       logo: '/assets/logos/ifdd.svg',
-      name: 'L’Institut de la Francophonie pour le Développement Durable',
-      about:
-        'L’Institut de la Francophonie pour le développement durable (IFDD) est un organe subsidiaire de l’Organisation internationale de la Francophonie (OIF) et son siège est à Québec. À l’origine dénommé Institut de l’Énergie des Pays ayant en commun l’usage du Français (IEPF), l’IFDD est né en 1988 peu après le IIe Sommet de la Francophonie, tenu à Québec en 1987. Sa création fait suite aux crises énergétiques mondiales et à la volonté des chefs d’États et de gouvernements des pays francophones de conduire une action concertée pour soutenir le développement du secteur de l’énergie dans les pays membres. En 1996, l’Institut inscrit les résolutions du Sommet de la Terre de Rio-1992 comme fil directeur de son action et devient l’Institut de l’énergie et de l’environnement de la Francophonie. En 2013, à la suite de la Conférence de Rio+20, il prend la dénomination Institut de la Francophonie pour le développement durable (IFDD). Sa mission est de contribuer à : •	la formation et au renforcement des capacités des acteurs de développement des pays de l’espace francophone dans les secteurs de l’énergie et de l’environnement ; •	l’accompagnement d’initiatives relatives à l’élaboration et à la mise en œuvre des programmes de développement durable ; •	la promotion de l’approche développement durable dans l’espace francophone ; •	et au développement de partenariats dans les différents secteurs de développement économique et social, notamment l’environnement et l’énergie. L’action de l’IFDD s’inscrit dans le Cadre stratégique de la Francophonie, au sein de la mission D « Développement durable, économie et solidarité » et de l’objectif stratégique 7 « Contribuer à l’élaboration et à la mise en œuvre du Programme de développement pour l’après-2015 et des Objectifs du développement durable ». L’Institut est chef de file des quatre programmes suivants de la programmation 2019-2022 de l’OIF, mis en œuvre en partenariat avec d’autres unités de l’organisation : - Francophonie, décennie d’action pour le développement durable, - Accès aux services énergétiques modernes en Francophonie,- Francophonie, environnement et résilience climatique, - Initiative de la Francophonie pour le Bassin du Congo.',
+      name: 'L’Institut de la Francophonie pour le Développement Durable (IFDD)',
+      about: "L’Institut de la Francophonie pour le développement durable (IFDD) est un organe subsidiaire de l’Organisation internationale de la Francophonie (OIF). Il contribue à la formation et au renforcement des capacités, soutient des initiatives en développement durable et promeut la gestion durable de l'énergie et de l'environnement.",
       website: 'https://www.ifdd.francophonie.org/',
     },
     {
       logo: '/assets/logos/oif.svg',
       name: 'L’Organisation Internationale de la Francophonie',
-      about:
-        'L’Organisation internationale de la Francophonie (OIF) est une institution fondée sur le partage d’une langue, le français, et de valeurs communes. Elle rassemble 88 États et gouvernements. Le rapport sur la langue française dans le monde, publié en 2018, établit à 300 millions le nombre de locuteurs de français. Présente sur les cinq continents, l’OIF mène des actions politiques et de coopération dans les domaines prioritaires suivants : la langue française et la diversité culturelle et linguistique ; la paix, la démocratie et les droits de l’Homme ; l’éducation et la formation ; le développement durable et la solidarité. Dans l’ensemble de ses actions, l’OIF accorde une attention particulière aux jeunes et aux femmes, ainsi qu’à l’accès aux technologies de l’information et de la communication.La secrétaire générale conduit l’action politique de la Francophonie, dont elle est la porteparole et la représentante officielle au niveau international. Louise Mushikiwabo a été élue à ce poste lors du XVIIe Sommet de la Francophonie, en octobre 2018, à Erevan (Arménie).Mme Mushikiwabo a pris ses fonctions en janvier 2019.',
+      about: "L’OIF est une institution fondée sur le partage du français et de valeurs communes. Elle rassemble 88 États et gouvernements et mène des actions dans les domaines de la diversité culturelle, de la paix, des droits de l'Homme, de l'éducation et du développement durable.",
       website: 'https://www.francophonie.org/',
     },
+    {
+      logo: '',
+      name: 'Conseil Allemand pour le Développement Durable',
+      about: "Le Conseil Allemand pour le Développement Durable conseille le gouvernement fédéral sur la durabilité. Depuis 2001, il soutient des projets et guide les dialogues sociétaux sur les enjeux de durabilité.",
+      website: 'https://www.nachhaltigkeitsrat.de/en/',
+    },
+    {
+      logo: '/assets/images/a20.png',
+      name: "Conseil des Organisations Non-Gouvernementales d’Appui au Développement, Sénégal (CONGAD)",
+      about: "Créé en 1982, CONGAD regroupe des ONG au Sénégal pour renforcer les capacités des OSC, des autorités locales et des médias et défendre des politiques publiques équitables.",
+      website: '',
+    },
+    {
+      logo: '/assets/images/a21.jpg',
+      name: 'Forêts et Développement Rural (FODER), Cameroun',
+      about: "FODER est une association environnementale à but non lucratif qui œuvre pour une gestion équitable et durable des ressources naturelles et pour l’amélioration des conditions de vie.",
+      website: '',
+    },
+    {
+      logo: '/assets/images/a22.png',
+      name: "Initiative de la Société Civile pour les Objectifs de Développement Durable, Côte d’Ivoire",
+      about: "Créée en 2017, cette initiative coordonne les actions des organisations de la société civile pour promouvoir, mettre en œuvre et suivre les ODD en Côte d’Ivoire.",
+      website: '',
+    },
+    {
+      logo: '/assets/images/a23.png',
+      name: "Association des Nations Unies de Tanzanie (UNA Tanzania)",
+      about: "UNA Tanzania, fondée en 1964, promeut les principes de la Charte des Nations Unies, sensibilise sur les droits humains et soutient les ODD.",
+      website: '',
+    },
   ];
-  constructor() {}
+
+  partnersEn: any[] = [
+    {
+      logo: '/assets/logos/national.png',
+      name: 'About the Global Forum for National SDG Advisory Bodies:',
+      about: "The Global Forum is a network connecting the knowledge and experience of multi-stakeholder advisory commissions and councils for sustainable development. It helps to implement the SDGs by bridging stakeholder interests and fostering societal cohesion.",
+      website: 'http://www.sdg-advisorybodies.net/',
+    },
+    {
+      logo: '/assets/logos/ifdd.svg',
+      name: 'Institut de la Francophonie pour le Développement Durable (IFDD)',
+      about: "The IFDD is a subsidiary body of the Organisation internationale de la Francophonie (OIF), contributing to training, development of sustainable programmes, and partnerships for energy and environmental management.",
+      website: 'https://www.ifdd.francophonie.org/',
+    },
+    {
+      logo: '/assets/logos/oif.svg',
+      name: 'Organisation internationale de la Francophonie',
+      about: "OIF is an institution founded on the sharing of the French language and common values. It unites 88 states and governments to act in education, culture, human rights, and sustainable development.",
+      website: 'https://www.francophonie.org/',
+    },
+    {
+      logo: '/assets/logos/german.png',
+      name: 'German Council for Sustainable Development',
+      about: "Since 2001, the German Council for Sustainable Development advises the federal government on sustainability, runs its own projects, and fosters sustainability-focused dialogue.",
+      website: 'https://www.nachhaltigkeitsrat.de/en/',
+    },
+    {
+      logo: '/assets/images/a20.png',
+      name: "Council of Non-Governmental Organisations Supporting Development, Senegal (CONGAD)",
+      about: "Established in 1982, CONGAD strengthens CSOs, local authorities, and media while advocating for fair public policies in Senegal.",
+      website: '',
+    },
+    {
+      logo: '/assets/images/a21.jpg',
+      name: 'Forests and Rural Development (FODER), Cameroon',
+      about: "FODER is a non-profit environmental association in Cameroon promoting sustainable natural resource management and better living conditions.",
+      website: '',
+    },
+    {
+      logo: '/assets/images/a22.png',
+      name: "Civil Society Initiative for Sustainable Development Goals, Côte d’Ivoire (ISC/ODD-CI)",
+      about: "Founded in 2017, ISC/ODD-CI coordinates civil society actions to promote, implement, and monitor the SDGs in Côte d’Ivoire.",
+      website: '',
+    },
+    {
+      logo: '/assets/images/a23.png',
+      name: "United Nations Association of Tanzania (UNA Tanzania)",
+      about: "Founded in 1964, UNA Tanzania supports UN Charter principles, raises public awareness, and works to achieve the SDGs in Tanzania.",
+      website: '',
+    },
+  ];
+
+
+  language: string | null = 'fr';
+  
+    constructor(private storage: StorageService) { }
+
+  ngOnInit(): void {
+
+    this.language = this.storage.getItem('language');
+    console.log(this.language)
+  }
 }
