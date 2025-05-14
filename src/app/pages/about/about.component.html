@@ -3,8 +3,7 @@
     <img *ngIf="section.image" [src]="section.image" style="height: 300px;" alt="" class="w-full rounded-t-xl">
     <div class="p-12">
       <h2 class="mb-7 text-primary text-3xl font-bold text-center">{{ section.title[language!] }}</h2>
-      <p [innerHTML]="section.content[language!]"></p>
+      <p [innerHTML]="section.safeContent[language!]"></p>
     </div>
   </section>
 </div>
-

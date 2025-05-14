@@ -7,7 +7,7 @@
       <h2 class="mb-7 text-primary text-3xl font-bold">
         {{ partner.name }}
       </h2>
-      <p [innerHTML]="partner.about"></p>
+      <p [innerHTML]="partner.safeAbout"></p>
       <p *ngIf="partner.website" class="mt-12 text-primary font-bold">
         <a [href]="partner.website" class="underline" target="_blank" rel="noopener">
           {{ partner.website }}
