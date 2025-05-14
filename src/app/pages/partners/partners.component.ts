@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { StorageService } from 'src/app/core/storage/storage.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class PartnersComponent {
       website: 'http://www.sdg-advisorybodies.net/',
     },
     {
-      logo: '/assets/logos/ifdd.svg',
+      logo: '/assets/logos/IFDD-CourtFondTransparent.png',
       name: 'L\'Institut de la Francophonie pour le Développement Durable(IFDD)',
       about: "L'Institut de la Francophonie pour le développement durable (IFDD) est un organe subsidiaire de l'Organisation internationale de la Francophonie (OIF) et est basé à Québec. Initialement connu sous le nom d'« Institut de l'Énergie des Pays ayant en commun l'usage du Français (IEPF) », l'IFDD a été créé en 1988 peu après le deuxième Sommet de la Francophonie, tenu à Québec en 1987. Il a été mis en place en réponse aux crises énergétiques mondiales et à la volonté des chefs d'État et de gouvernement des pays francophones de mener une action concertée pour soutenir le développement du secteur de l'énergie dans les pays membres. En 1996, l'Institut a adopté les résolutions du Sommet de la Terre de Rio en 1992 comme principe directeur de son action, et est devenu l'« Institut de l'énergie et de l'environnement de la Francophonie ». En 2013, suite à la Conférence Rio+20, il est devenu l'« Institut de la Francophonie pour le développement durable (IFDD) ». Sa mission est de contribuer à la formation et au renforcement des capacités des acteurs du développement dans les pays francophones dans les secteurs de l'énergie et de l'environnement; au soutien d'initiatives relatives au développement et à la mise en œuvre de programmes de développement durable; à la promotion de l'approche du développement durable dans l'espace francophone; et au développement de partenariats dans les différents secteurs du développement économique et social, notamment l'environnement et l'énergie.",
       website: 'https://www.ifdd.francophonie.org/',
@@ -26,35 +27,11 @@ export class PartnersComponent {
       website: 'https://www.francophonie.org/',
     },
     {
-      logo: '',
+      logo: '/assets/logos/german.png',
       name: 'Conseil Allemand pour le Développement Durable',
-      about: "Le Conseil allemand pour le développement durable (RNE) conseille le gouvernement fédéral sur les questions de politique de durabilité. Il agit à ce titre en tant qu'entité indépendante, et depuis 2001, ses membres sont nommés tous les trois ans par le gouvernement fédéral. Le Conseil est composé de 15 personnalités publiques, comprenant des individus de la société civile, du secteur des affaires, de la communauté scientifique et de la sphère politique. Le Conseil mène également ses propres projets visant à faire progresser le sujet de la durabilité de manière pratique. En outre, il contribue à façonner l'élan thématique au sein du dialogue politique et sociétal. Le Conseil est soutenu dans ses activités par un bureau administratif basé à Berlin. Le Conseil allemand pour le développement durable (RNE) soutient le projet présenté sur ce site et félicite les partenaires du Bénin et du Togo pour le succès de leur travail. Veuillez trouver ici la lettre officielle de soutien.",
+      about: "Le Conseil allemand pour le développement durable (RNE) conseille le gouvernement fédéral sur les questions de politique de durabilité. Il agit à ce titre en tant qu'entité indépendante, et depuis 2001, ses membres sont nommés tous les trois ans par le gouvernement fédéral. Le Conseil est composé de 15 personnalités publiques, comprenant des individus de la société civile, du secteur des affaires, de la communauté scientifique et de la sphère politique. Le Conseil mène également ses propres projets visant à faire progresser le sujet de la durabilité de manière pratique. En outre, il contribue à façonner l'élan thématique au sein du dialogue politique et sociétal. Le Conseil est soutenu dans ses activités par un bureau administratif basé à Berlin. Le Conseil allemand pour le développement durable (RNE) soutient le projet présenté sur ce site et félicite les partenaires du Bénin et du Togo pour le succès de leur travail. Veuillez trouver <a href='https://www.ifdd.francophonie.org/wp-content/uploads/2022/05/RNE-Lettre-de-soutien.pdf' target='_blank' style='color: #0056b3; text-decoration: underline; font-weight: bold;'>ici</a> la lettre officielle de soutien.",
       website: 'https://www.nachhaltigkeitsrat.de/en/',
-    },
-    {
-      logo: '/assets/images/a20.png',
-      name: "Conseil des Organisations Non-Gouvernementales d'Appui au Développement, Sénégal (CONGAD)",
-      about: "Créé en 1982, CONGAD regroupe des ONG au Sénégal pour renforcer les capacités des OSC, des autorités locales et des médias et défendre des politiques publiques équitables.",
-      website: '',
-    },
-    {
-      logo: '/assets/images/a21.jpg',
-      name: 'Forêts et Développement Rural (FODER), Cameroun',
-      about: "FODER est une association environnementale à but non lucratif qui œuvre pour une gestion équitable et durable des ressources naturelles et pour l'amélioration des conditions de vie.",
-      website: '',
-    },
-    {
-      logo: '/assets/images/a22.png',
-      name: "Initiative de la Société Civile pour les Objectifs de Développement Durable, Côte d'Ivoire",
-      about: "Créée en 2017, cette initiative coordonne les actions des organisations de la société civile pour promouvoir, mettre en œuvre et suivre les ODD en Côte d'Ivoire.",
-      website: '',
-    },
-    {
-      logo: '/assets/images/a23.png',
-      name: "Association des Nations Unies de Tanzanie (UNA Tanzania)",
-      about: "UNA Tanzania, fondée en 1964, promeut les principes de la Charte des Nations Unies, sensibilise sur les droits humains et soutient les ODD.",
-      website: '',
-    },
+    }
   ];
 
   partnersEn: any[] = [
@@ -65,7 +42,7 @@ export class PartnersComponent {
       website: 'http://www.sdg-advisorybodies.net/',
     },
     {
-      logo: '/assets/logos/ifdd.svg',
+      logo: '/assets/logos/IFDD-CourtFondTransparent.png',
       name: 'Institut de la Francophonie pour le Développement Durable (IFDD)',
       about: "The Institut de la Francophonie pour le développement durable (IFDD) is a subsidiary body of the Organisation internationale de la Francophonie (OIF) and is based in Quebec City. Originally known as the « Institut de l'Énergie des Pays ayant en commun l'usage du Français (IEPF) », the IFDD was created in 1988 shortly after the second Francophonie Summit, held in Quebec in 1987. It was set up in response to the global energy crises and the desire of the heads of state and government of French-speaking countries to take concerted action to support the development of the energy sector in member countries. In 1996, the Institute adopted the resolutions of the Rio Earth Summit in 1992 as the guiding principle for its action, and became the « Institut de l'énergie et de l'environnement de la Francophonie ». In 2013, following the Rio+20 Conference, it became the « Institut de la Francophonie pour le développement durable (IFDD) ». Its mission is to contribute to training and capacity-building for development players in French-speaking countries in the energy and environment sectors; supporting initiatives relating to the development and implementation of sustainable development programmes; promoting the sustainable development approach in the French-speaking world; and developing partnerships in the various sectors of economic and social development, particularly the environment and energy.",
       website: 'https://www.ifdd.francophonie.org/',
@@ -79,43 +56,28 @@ export class PartnersComponent {
     {
       logo: '/assets/logos/german.png',
       name: 'German Council for Sustainable Development',
-      about: "The German Council for Sustainable Development (RNE) advises the Federal Government on issues of sustainability policy. It acts in this capacity as an independent entity, and since 2001 its members have been appointed every three years by the Federal Government. The Council consists of 15 public figures, comprising individuals from civil society, the business sector, the scientific community and the political arena. The Council also carries out its own projects aimed at advancing the topic of sustainability in practical terms. In addition, it helps shape topically focused momentum within policy and societal dialogue. The Council is supported in its activities by an administrative office based in Berlin. The German Council for Sustainable Development (RNE) supports the project presented on this site and congratulates the partners in Benin and Togo on the success of their work. Please find the official letter of support here.",
+      about: "The German Council for Sustainable Development (RNE) advises the Federal Government on issues of sustainability policy. It acts in this capacity as an independent entity, and since 2001 its members have been appointed every three years by the Federal Government. The Council consists of 15 public figures, comprising individuals from civil society, the business sector, the scientific community and the political arena. The Council also carries out its own projects aimed at advancing the topic of sustainability in practical terms. In addition, it helps shape topically focused momentum within policy and societal dialogue. The Council is supported in its activities by an administrative office based in Berlin. The German Council for Sustainable Development (RNE) supports the project presented on this site and congratulates the partners in Benin and Togo on the success of their work. Please find the official letter of support <a href='https://www.ifdd.francophonie.org/wp-content/uploads/2022/05/RNE-Lettre-de-soutien.pdf' target='_blank' style='color: #0056b3; text-decoration: underline; font-weight: bold;'>here</a>.",
       website: 'https://www.nachhaltigkeitsrat.de/en/',
-    },
-    {
-      logo: '/assets/images/a20.png',
-      name: "Council of Non-Governmental Organisations Supporting Development, Senegal (CONGAD)",
-      about: "Established in 1982, CONGAD strengthens CSOs, local authorities, and media while advocating for fair public policies in Senegal.",
-      website: '',
-    },
-    {
-      logo: '/assets/images/a21.jpg',
-      name: 'Forests and Rural Development (FODER), Cameroon',
-      about: "FODER is a non-profit environmental association in Cameroon promoting sustainable natural resource management and better living conditions.",
-      website: '',
-    },
-    {
-      logo: '/assets/images/a22.png',
-      name: "Civil Society Initiative for Sustainable Development Goals, Côte d'Ivoire (ISC/ODD-CI)",
-      about: "Founded in 2017, ISC/ODD-CI coordinates civil society actions to promote, implement, and monitor the SDGs in Côte d'Ivoire.",
-      website: '',
-    },
-    {
-      logo: '/assets/images/a23.png',
-      name: "United Nations Association of Tanzania (UNA Tanzania)",
-      about: "Founded in 1964, UNA Tanzania supports UN Charter principles, raises public awareness, and works to achieve the SDGs in Tanzania.",
-      website: '',
-    },
+    }
   ];
 
 
   language: string | null = 'fr';
   
-    constructor(private storage: StorageService) { }
+  constructor(private storage: StorageService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
 
     this.language = this.storage.getItem('language');
     console.log(this.language)
+
+    // Sécuriser le HTML pour chaque partenaire
+    this.partners.forEach(partner => {
+      partner.safeAbout = this.sanitizer.bypassSecurityTrustHtml(partner.about);
+    });
+
+    this.partnersEn.forEach(partner => {
+      partner.safeAbout = this.sanitizer.bypassSecurityTrustHtml(partner.about);
+    });
   }
 }

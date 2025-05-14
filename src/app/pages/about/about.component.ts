@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { StorageService } from 'src/app/core/storage/storage.service';
 
 @Component({
@@ -34,23 +35,23 @@ L’objectif principal est ici de favoriser la mise en réseau et d’améliorer
        image: '',
       title: {
         en: "Download the snapshot publication",
-        fr: "Téléchargez la publication du snapshot"
+        fr: "Téléchargez la publication"
       },
       content: {
-        en: `Snapshot of a Global Forum project in Bénin and Togo on SDG stakeholder mapping, round table dialogues and digital visibility for accelerated SDG delivery <br><br>
+        en: `<b> Snapshot of a Global Forum project in Bénin and Togo on SDG stakeholder mapping, round table dialogues and digital visibility for accelerated SDG delivery </b> <br><br>
 This snapshot highlights the project’s results, thereby presenting its methodological concept. The implementing Global Forum working group focussed on improving the visibility and network character of existing actions for the implementation of the SDGs in Benin and Togo. They chose an approach that emphasized the potential of SDG stakeholder mapping, local round table dialogues, and digital visibility to accelerate SDG implementation at local level. The main outcome of the project is a digital map to make visible and thereby strengthen the engagement of relevant civil society organizations in the implementation of the SDGs. <br><br>
 <a target="_blank" style="text-decoration: underline; text-align: center; color:blue" href="https://sdgglobalforum.org/fileadmin/user_upload/Projects/220705_Global_Forum_Projekte_EN.pdf">DOWNLOAD</a><br><br>
 `,
-        fr: `Aperçu d’un projet du Forum Mondial, 2022: Renforcement de la mise en réseau et de la visibilité des efforts organisationnels existants pour mettre en œuvre les ODD
-Le groupe de travail du Forum Mondial chargé de la mise en œuvre s’est concentré sur l’amélioration de la visibilité et la mise en réseau des actions existantes pour mettre en œuvre des ODD au Bénin et au Togo. Ils ont choisi une approche qui mis en exergue le potentiel de la cartographie des acteurs des ODD, des espaces de dialogues au sein de tables rondes locales et de la visibilité numérique pour accélérer la réalisation des ODD. Le résultat principal du projet est une cartographie numérique qui vise à rendre visible, et donc à renforcer l’engagement des organisations de la société civile (OSC) impliquées dans la mise en œuvre des ODD. ( Juillet 2022)
+        fr: `<b>Aperçu d’un projet du Forum Mondial, 2022: Renforcement de la mise en réseau et de la visibilité des efforts organisationnels existants pour mettre en œuvre les ODD </b> <br><br>
+Le groupe de travail du Forum Mondial chargé de la mise en œuvre s’est concentré sur l’amélioration de la visibilité et la mise en réseau des actions existantes pour mettre en œuvre des ODD au Bénin et au Togo. Ils ont choisi une approche qui mis en exergue le potentiel de la cartographie des acteurs des ODD, des espaces de dialogues au sein de tables rondes locales et de la visibilité numérique pour accélérer la réalisation des ODD. Le résultat principal du projet est une cartographie numérique qui vise à rendre visible, et donc à renforcer l’engagement des organisations de la société civile (OSC) impliquées dans la mise en œuvre des ODD. ( Juillet 2022) <br><br>
 <a target="_blank" style="text-decoration: underline; text-align: center; color:blue" href="https://sdgglobalforum.org/fileadmin/user_upload/Projects/220705_Global_Forum_Projekte_EN.pdf">TELECHARGER</a><br><br>
 `
        },
     },
      {
-       image: '',
+       image: '/assets/images/a1.jpg',
       title: {
-        en: "Civil Society Organizations Working Group on the SDGs, Togo",
+        en: "Groupe de Travail des Organisations de la Société Civile sur les ODD, Togo",
         fr: "Groupe de Travail des Organisations de la Société Civile sur les ODD, Togo"
       },
       content: {
@@ -59,9 +60,9 @@ Le groupe de travail du Forum Mondial chargé de la mise en œuvre s’est conce
       }
     },
      {
-       image: '',
+       image: '/assets/images/a1.png',
       title: {
-        en: "Civil Society House, Benin",
+        en: "Maison de la Société Civile, Bénin",
         fr: "Maison de la Société Civile, Bénin"
       },
       content: {
@@ -78,7 +79,7 @@ Depuis 2009, elle a développé une expertise et des outils de renforcement et d
      {
        image: '/assets/images/a20.png',
       title: {
-        en: "Council of Non-Governmental Development Organizations, Senegal",
+        en: "Conseil des Organisations Non-Gouvernementales d’Appui au Développement, Sénégal",
         fr: "Conseil des Organisations Non-Gouvernementales d’Appui au Développement, Sénégal"
       },
       content: {
@@ -89,7 +90,7 @@ Depuis 2009, elle a développé une expertise et des outils de renforcement et d
      {
        image: '/assets/images/a21.jpg',
       title: {
-        en: "Forestry and Rural Development, Cameroon",
+        en: "Forêts et Développement Rural, Cameroun",
         fr: "Forêts et Développement Rural, Cameroun"
       },
       content: {
@@ -120,7 +121,7 @@ Développer des partenariats et mobiliser des fonds pour la réalisation de sa m
      {
        image: '/assets/images/a22.png',
       title: {
-        en: "Civil Society Initiative for Sustainable Development Goals in Côte d'Ivoire",
+        en: "Initiative de la Société Civile pour les Objectifs de Développement Durable en Côte d’Ivoire",
         fr: "Initiative de la Société Civile pour les Objectifs de Développement Durable en Côte d’Ivoire"
       },
       content: {
@@ -152,11 +153,23 @@ Une société tanzanienne juste où personne n'est laissé pour compte.
   ];
 
 
-  constructor(private storage: StorageService) { }
+  constructor(private storage: StorageService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
       
-      this.language = this.storage.getItem('language');
-      console.log(this.language)
+    this.language = this.storage.getItem('language');
+    console.log(this.language);
+
+    // Sécuriser le HTML pour chaque section
+    this.sections.forEach(section => {
+      // Sécuriser le contenu en français
+      if (section.content.fr) {
+        section.safeContent = {
+          fr: this.sanitizer.bypassSecurityTrustHtml(section.content.fr),
+          en: this.sanitizer.bypassSecurityTrustHtml(section.content.en)
+        };
+      }
+    });
+  }
     }
-}
+
