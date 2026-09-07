@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiRoot: 'https://cartodd-api.francophonie.org/api',
-  apiKey: 'EpMmcqPVpJQjOOBbmnD8auWYkU1APviV7FsFQUeVDhojXICzLzDoJsgtzzPVv2LT',
+  apiKey: 'BWGHJQbxZXQnOw1qbDYVnGBTNS0GCSFLyLt3kBr93uesxSQO9LCWZLuGwHeefFt0',
 };
 
 /*
