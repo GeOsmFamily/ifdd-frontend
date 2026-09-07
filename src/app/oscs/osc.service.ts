@@ -5,7 +5,7 @@ import { Category } from '../odds/category';
 import { Osc } from './osc';
 import { Results } from './results';
 
-const PAGE_LIMIT = 50;
+const PAGE_LIMIT = 500;
 
 @Injectable({
   providedIn: 'root'
