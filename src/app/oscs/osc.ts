@@ -50,8 +50,8 @@ export class Osc {
       this.reference = data.reference;
       this.active = data.active;
 
-      if (data.categorieOdds) {
-        this.categorieOdds = data.categorieOdds.map((category: any) => {
+      if (data.categorie_odds) {
+        this.categorieOdds = data.categorie_odds.map((category: any) => {
           this.oddIds.add(category.id_odd);
           const cat = new Category(
             category.id,
@@ -74,8 +74,8 @@ export class Osc {
         });
       }
 
-      if (data.zoneInterventions) {
-        this.zoneInterventions = data.zoneInterventions.map(
+      if (data.zone_interventions) {
+        this.zoneInterventions = data.zone_interventions.map(
           (zone: any) =>
             new ZoneIntervention(
               zone.id,
