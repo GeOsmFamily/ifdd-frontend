@@ -33,7 +33,7 @@ export class Osc {
       this.name = data.name;
       this.abbreviation = data.abbreviation;
       this.numero_osc = data.numero_osc;
-      this.country = data.country;
+      this.country = data.pays;
       this.date_fondation = data.date_fondation;
       this.description = data.description;
       this.personne_contact = data.personne_contact;
@@ -50,8 +50,8 @@ export class Osc {
       this.reference = data.reference;
       this.active = data.active;
 
-      if (data.categorie_odds) {
-        this.categorieOdds = data.categorie_odds.map((category: any) => {
+      if (data.categorieOdds) {
+        this.categorieOdds = data.categorieOdds.map((category: any) => {
           this.oddIds.add(category.id_odd);
           const cat = new Category(
             category.id,
@@ -64,7 +64,7 @@ export class Osc {
               category.odd.name,
               category.odd.name_en,
               category.odd.number,
-              category.odd.categorie_number,
+              category.odd.number_categorie,
               category.odd.logo_odd,
               category.odd.color
             )
@@ -74,8 +74,8 @@ export class Osc {
         });
       }
 
-      if (data.zone_interventions) {
-        this.zoneInterventions = data.zone_interventions.map(
+      if (data.zoneInterventions) {
+        this.zoneInterventions = data.zoneInterventions.map(
           (zone: any) =>
             new ZoneIntervention(
               zone.id,
